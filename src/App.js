@@ -79,6 +79,7 @@ function App() {
         <CreateTask addTask={addTask} />
         <h2>What you must To Do</h2>
         <TaskList todos={todosFilter} removeTask={removeTask} />
+        <h2>Comments</h2>
       </Container>
     </>
   );

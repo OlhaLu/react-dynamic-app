@@ -42,6 +42,7 @@ const CreateTask = ({ addTask }) => {
         onChange={onChangeName}
         id={nameID.current}
         value={name}
+        required
       />
       <Button type="submit">Add to List</Button>
     </form>
