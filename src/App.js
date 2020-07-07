@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useReducer, useMemo } from 'react';
 import shortid from 'shortid';
+import styled from 'styled-components';
 import localStorage from './localStorage';
 import CreateTask from './components/CreateTask';
 import TaskList from './components/TaskList';
@@ -72,12 +73,22 @@ function App() {
 
   return (
     <>
-      <h1>Add Items</h1>
-      <CreateTask addTask={addTask} />
-      <h2>To Do List</h2>
-      <TaskList todos={todosFilter} removeTask={removeTask} />
+      <Container>
+        <h1>To Do List</h1>
+        <h2>What you want to add</h2>
+        <CreateTask addTask={addTask} />
+        <h2>What you must To Do</h2>
+        <TaskList todos={todosFilter} removeTask={removeTask} />
+      </Container>
     </>
   );
 }
 
 export default App;
+
+const Container = styled.div`
+  width: 900px;
+  margin: 10px auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+`;

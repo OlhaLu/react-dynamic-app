@@ -42,27 +42,16 @@ span {
   margin: 0 10px;
 }
 
-.addContactForm {
-  float: left;
-  margin-right: 30px;
-}
-
-.phoneBookList {
-  overflow: hidden;
-  border-left: 1px solid #ccc;
-  padding-bottom: 30px;
-}
-
-.contact {
+.todo {
   border-bottom: 1px solid #ccc;
   padding: 20px;
 }
 
-.contact h2 {
+.todo h2 {
   margin: 0;
   font-size: 1.2em;
 }
-.contact p {
+.todo p {
   margin: 0;
 }
 

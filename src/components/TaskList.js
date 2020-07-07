@@ -1,15 +1,16 @@
 import React from 'react';
 import T from 'prop-types';
+import styled from 'styled-components';
 
 const TaskList = ({ todos, removeTask }) => (
   <ul>
     {todos.map(todo => (
-      <li key={todo.id}>
+      <List key={todo.id}>
         <span>{todo.name}</span>
-        <button type="button" onClick={() => removeTask(todo.id)}>
+        <Button type="button" onClick={() => removeTask(todo.id)}>
           Delete
-        </button>
-      </li>
+        </Button>
+      </List>
     ))}
   </ul>
 );
@@ -26,3 +27,21 @@ TaskList.propTypes = {
 };
 
 export default TaskList;
+
+const List = styled.li`
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 10px;
+`;
+
+const Button = styled.button`
+  float: right;
+  background: #f8a035;
+  color: #fff;
+  border-radius: 3px;
+  border: 2px solid #ccc;
+  padding: 3px 10px;
+  outline: none;
+  cursor: pointer;
+`;

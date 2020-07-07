@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import T from 'prop-types';
 import shortid from 'shortid';
+import styled from 'styled-components';
 
 const CreateTask = ({ addTask }) => {
   const [name, setName] = useState('');
@@ -33,16 +34,16 @@ const CreateTask = ({ addTask }) => {
 
   return (
     <form onSubmit={onSubmit}>
-      <span>Items: </span>
-      <input
+      <span>Create new task: </span>
+      <Form
+        placeholder="new task"
         type="text"
         name="name"
         onChange={onChangeName}
         id={nameID.current}
         value={name}
       />
-
-      <button type="submit">Add task ToDo</button>
+      <Button type="submit">Add to List</Button>
     </form>
   );
 };
@@ -52,3 +53,23 @@ CreateTask.propTypes = {
 };
 
 export default CreateTask;
+
+const Form = styled.input`
+  width: 235px;
+  outline: none;
+  font-size: 13px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 10px;
+`;
+
+const Button = styled.button`
+  display: flex;
+  background: #f8a035;
+  color: #fff;
+  border-radius: 3px;
+  border: 2px solid #ccc;
+  padding: 3px 10px;
+  outline: none;
+  cursor: pointer;
+`;
