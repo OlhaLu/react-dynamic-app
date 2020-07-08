@@ -21,25 +21,25 @@ const CreateTask = ({ addTask }) => {
     };
   }, [name]);
 
-  const onChangeName = e => {
+  const onChangeTask = e => {
     const changeName = e.target.value;
     setName(changeName);
   };
 
-  const onSubmit = e => {
+  const onSubmitTask = e => {
     e.preventDefault();
     addTask({ name });
     setName('');
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmitTask}>
       <span>Create new task: </span>
       <Form
         placeholder="new task"
         type="text"
         name="name"
-        onChange={onChangeName}
+        onChange={onChangeTask}
         id={nameID.current}
         value={name}
         required
